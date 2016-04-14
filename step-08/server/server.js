@@ -2,10 +2,11 @@ var express   = require('express');
 var app       = express();
 var apiRouter = require('./api/api.js'); //api router
 var err       = require("./middleware/err.js")
-var config = require('./config/config');
+var config    = require('./config/config');
 
 
 // db.url is different depending on NODE_ENV
+//fun fact: mongoose also has middleware. Ex: before saving to DB you can do a lot of different checks on the doc to be submitted etc
 require('mongoose').connect(config.db.url);
 
 
